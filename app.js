@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const Tenor = require('tenorjs').client({
   // Replace with your own key
-  Key: 'AIzaSyAe4vYsft7-FWEU9v-wU4wjUtUp6SwzP1k', // https://tenor.com/developer/keyregistration
+  Key: process.env.TENOR_API_KEY, // https://tenor.com/developer/keyregistration
   Filter: 'high', // "off", "low", "medium", "high", not case sensitive
   Locale: 'en_US', // Your locale here, case-sensitivity depends on input
 });
